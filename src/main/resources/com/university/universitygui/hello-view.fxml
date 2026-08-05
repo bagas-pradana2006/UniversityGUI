@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="780.0" prefWidth="920.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.universitygui.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="University Management System" textFill="#2c3e50">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+    <TabPane fx:id="mainTabPane" VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+
+        <!-- ================= TAB 0: DASHBOARD ================= -->
+        <Tab fx:id="dashboardTab" text="Dashboard">
+            <VBox spacing="20.0">
+                <padding>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </padding>
+
+                <Label fx:id="dashboardGreetingLabel" text="Selamat datang!" textFill="#2c3e50">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                </Label>
+                <Label fx:id="dashboardSubtitleLabel" text="" textFill="#7f8c8d">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+
+                <HBox spacing="20.0">
+                    <VBox fx:id="card1Box" prefWidth="170.0" spacing="6.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                        <Label fx:id="card1Title" text="" textFill="#7f8c8d" />
+                        <Label fx:id="card1Value" text="" textFill="#2980b9">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox fx:id="card2Box" prefWidth="170.0" spacing="6.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                        <Label fx:id="card2Title" text="" textFill="#7f8c8d" />
+                        <Label fx:id="card2Value" text="" textFill="#27ae60">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox fx:id="card3Box" prefWidth="170.0" spacing="6.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                        <Label fx:id="card3Title" text="" textFill="#7f8c8d" />
+                        <Label fx:id="card3Value" text="" textFill="#f39c12">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox fx:id="card4Box" prefWidth="170.0" spacing="6.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                        <Label fx:id="card4Title" text="" textFill="#7f8c8d" />
+                        <Label fx:id="card4Value" text="" textFill="#8e44ad">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                    <VBox fx:id="card5Box" prefWidth="170.0" spacing="6.0" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 8, 0, 0, 3);">
+                        <Label fx:id="card5Title" text="" textFill="#7f8c8d" />
+                        <Label fx:id="card5Value" text="" textFill="#c0392b">
+                            <font>
+                                <Font name="System Bold" size="30.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 1: DATA MAHASISWA ================= -->
+        <Tab fx:id="dataMahasiswaTab" text="Data Mahasiswa">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+
+                <!-- Form Input Data -->
+                <HBox spacing="10.0">
+                    <TextField fx:id="nimField" promptText="NIM" prefWidth="120.0" />
+                    <TextField fx:id="nameField" promptText="Nama Mahasiswa" prefWidth="180.0" />
+                    <TextField fx:id="facultyField" promptText="Fakultas" prefWidth="150.0" />
+                    <TextField fx:id="deptField" promptText="Jurusan" prefWidth="150.0" />
+                    <TextField fx:id="semesterField" promptText="Semester" prefWidth="80.0" />
+                </HBox>
+
+                <VBox spacing="10.0">
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Button fx:id="btnAddStudent" onAction="#onAddButtonClick" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Tambah" />
+                        <Button fx:id="btnEditStudent" onAction="#onEditButtonClick" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Edit Data" />
+                        <Button fx:id="btnDeleteStudent" onAction="#onDeleteButtonClick" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;" text="Hapus" />
+                        <Button fx:id="btnUndoDelete" onAction="#onUndoDeleteButtonClick" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-weight: bold;" text="Undo Hapus ⏪" />
+                        <Button onAction="#onClearButtonClick" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold;" text="Bersihkan Form" />
+
+                        <Label text="     Cari:" alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="searchField" promptText="Kata kunci..." prefWidth="110.0" />
+                        <ComboBox fx:id="searchModeComboBox" prefWidth="90.0" />
+                        <ComboBox fx:id="searchAlgorithmComboBox" prefWidth="120.0" />
+                        <Button onAction="#onSearchButtonClick" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;" text="Cari" />
+                    </HBox>
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <ComboBox fx:id="sortAlgorithmComboBox" promptText="Pilih Algoritma Sort" prefWidth="160.0" />
+                        <Button onAction="#onAdvancedSortButtonClick" style="-fx-background-color: #d35400; -fx-text-fill: white; -fx-font-weight: bold;" text="Sort NIM &amp; Ukur Waktu" />
+                        <Button onAction="#onSortByNameButtonClick" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold;" text="Urutkan Nama" />
+                        <Button onAction="#onSortByIPKButtonClick" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold;" text="Urutkan IPK" />
+                        <Button onAction="#onExportButtonClick" style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-font-weight: bold;" text="Export CSV" />
+                        <Button fx:id="btnImportStudent" onAction="#onImportButtonClick" style="-fx-background-color: #16a085; -fx-text-fill: white; -fx-font-weight: bold;" text="Import CSV" />
+                    </HBox>
+                </VBox>
+
+                <!-- Tabel Mahasiswa -->
+                <TableView fx:id="studentTable" prefHeight="380.0" prefWidth="880.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colNim" prefWidth="100.0" text="NIM" />
+                        <TableColumn fx:id="colName" prefWidth="190.0" text="Nama" />
+                        <TableColumn fx:id="colFaculty" prefWidth="170.0" text="Fakultas" />
+                        <TableColumn fx:id="colDept" prefWidth="170.0" text="Jurusan" />
+                        <TableColumn fx:id="colSemester" prefWidth="90.0" text="Semester" />
+                        <TableColumn fx:id="colIPK" prefWidth="90.0" text="IPK" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB BARU: PRESENSI ================= -->
+        <Tab fx:id="presensiTab" text="Presensi">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <Label text="Pilih Mahasiswa di Tab Data Mahasiswa terlebih dahulu." textFill="#7f8c8d">
+                        <font>
+                            <Font name="System Italic" size="13.0" />
+                        </font>
+                    </Label>
+                </HBox>
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <TextField fx:id="presensiNimField" promptText="NIM (Otomatis)" disable="true" prefWidth="120.0" />
+                    <ComboBox fx:id="presensiCourseComboBox" promptText="Pilih MK yang diambil" prefWidth="250.0" />
+                    <ComboBox fx:id="presensiMeetingComboBox" promptText="Pertemuan (1-16)" prefWidth="150.0" />
+                    <ComboBox fx:id="presensiStatusComboBox" promptText="Status Kehadiran" prefWidth="150.0" />
+                    <Button onAction="#onSaveAttendanceButtonClick" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Simpan Kehadiran" />
+                </HBox>
+                <TableView fx:id="attendanceTable" prefHeight="400.0" prefWidth="880.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colAttMeeting" prefWidth="150.0" text="Pertemuan Ke-" />
+                        <TableColumn fx:id="colAttStatus" prefWidth="200.0" text="Status Kehadiran" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 2: NILAI / KRS ================= -->
+        <Tab fx:id="nilaiTab" text="Nilai / KRS">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <Label fx:id="gradeTitleLabel" text="Transkrip Nilai: (Pilih mahasiswa di tab Data Mahasiswa)" textFill="#2980b9" prefWidth="320.0">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="ipkLabel" text="IPK: -" textFill="#27ae60" prefWidth="110.0" minWidth="110.0">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                </HBox>
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="courseComboBox" promptText="Pilih Mata Kuliah" prefWidth="230.0" />
+                    <TextField fx:id="tugasField" promptText="Tugas" prefWidth="70.0" />
+                    <TextField fx:id="quizField" promptText="Quiz" prefWidth="70.0" />
+                    <TextField fx:id="utsField" promptText="UTS" prefWidth="70.0" />
+                    <TextField fx:id="uasField" promptText="UAS" prefWidth="70.0" />
+                    <Button fx:id="btnEnrollCourse" onAction="#onEnrollCourseButtonClick" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-font-weight: bold;" text="Ambil MK" />
+                    <Button fx:id="btnInputNilai" onAction="#onInputNilaiButtonClick" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Input Nilai" />
+                    <Button fx:id="btnDeleteGrade" onAction="#onDeleteGradeButtonClick" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;" text="Batal KRS" />
+
+                    <Button fx:id="btnApproveKrs" onAction="#onApproveKrsButtonClick" style="-fx-background-color: #8e44ad; -fx-text-fill: white; -fx-font-weight: bold;" text="Setujui Antrean KRS (0)" />
+
+                    <Button onAction="#onPrintTranscriptButtonClick" style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-font-weight: bold;" text="Export/Print PDF" />
+                </HBox>
+                <TableView fx:id="gradeTable" prefHeight="400.0" prefWidth="880.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colCourseId" prefWidth="90.0" text="Kode MK" />
+                        <TableColumn fx:id="colCourseName" prefWidth="230.0" text="Mata Kuliah" />
+                        <TableColumn fx:id="colCredits" prefWidth="60.0" text="SKS" />
+                        <TableColumn fx:id="colTugas" prefWidth="70.0" text="Tugas" />
+                        <TableColumn fx:id="colQuiz" prefWidth="70.0" text="Quiz" />
+                        <TableColumn fx:id="colUts" prefWidth="70.0" text="UTS" />
+                        <TableColumn fx:id="colUas" prefWidth="70.0" text="UAS" />
+                        <TableColumn fx:id="colFinalScore" prefWidth="100.0" text="Nilai Akhir" />
+                        <TableColumn fx:id="colGrade" prefWidth="80.0" text="Grade" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 3: DOSEN ================= -->
+        <Tab fx:id="dosenTab" text="Dosen">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+                <HBox spacing="10.0">
+                    <TextField fx:id="lecturerIdField" promptText="NIP" prefWidth="140.0" />
+                    <TextField fx:id="lecturerNameField" promptText="Nama Dosen" prefWidth="180.0" />
+                    <TextField fx:id="lecturerFacultyField" promptText="Fakultas" prefWidth="150.0" />
+                    <TextField fx:id="lecturerDeptField" promptText="Jurusan" prefWidth="150.0" />
+                    <TextField fx:id="lecturerEmailField" promptText="Email" prefWidth="180.0" />
+                </HBox>
+                <HBox spacing="10.0">
+                    <Button onAction="#onAddLecturerButtonClick" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Tambah" />
+                    <Button onAction="#onEditLecturerButtonClick" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Edit Data" />
+                    <Button onAction="#onDeleteLecturerButtonClick" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;" text="Hapus" />
+                    <Button onAction="#onClearLecturerButtonClick" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold;" text="Bersihkan Form" />
+                </HBox>
+                <TableView fx:id="lecturerTable" prefHeight="450.0" prefWidth="880.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colLecturerId" prefWidth="120.0" text="NIP" />
+                        <TableColumn fx:id="colLecturerName" prefWidth="200.0" text="Nama" />
+                        <TableColumn fx:id="colLecturerFaculty" prefWidth="200.0" text="Fakultas" />
+                        <TableColumn fx:id="colLecturerDept" prefWidth="180.0" text="Jurusan" />
+                        <TableColumn fx:id="colLecturerEmail" prefWidth="180.0" text="Email" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 4: MATA KULIAH (KHUSUS ADMIN) ================= -->
+        <Tab fx:id="courseManagementTab" text="Mata Kuliah">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+                <HBox spacing="10.0">
+                    <TextField fx:id="courseIdMgmtField" promptText="Kode MK" prefWidth="120.0" />
+                    <TextField fx:id="courseNameMgmtField" promptText="Nama Mata Kuliah" prefWidth="220.0" />
+                    <TextField fx:id="courseFacultyMgmtField" promptText="Fakultas" prefWidth="180.0" />
+                    <TextField fx:id="courseDeptMgmtField" promptText="Jurusan" prefWidth="180.0" />
+                    <TextField fx:id="courseCreditsMgmtField" promptText="SKS" prefWidth="70.0" />
+                </HBox>
+                <HBox spacing="10.0">
+                    <Button onAction="#onAddCourseButtonClick" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Tambah" />
+                    <Button onAction="#onEditCourseButtonClick" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Edit Data" />
+                    <Button onAction="#onDeleteCourseButtonClick" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;" text="Hapus" />
+                    <Button onAction="#onClearCourseButtonClick" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold;" text="Bersihkan Form" />
+                </HBox>
+                <TableView fx:id="courseManagementTable" prefHeight="450.0" prefWidth="880.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colMgmtCourseId" prefWidth="110.0" text="Kode MK" />
+                        <TableColumn fx:id="colMgmtCourseName" prefWidth="300.0" text="Mata Kuliah" />
+                        <TableColumn fx:id="colMgmtFaculty" prefWidth="200.0" text="Fakultas" />
+                        <TableColumn fx:id="colMgmtDept" prefWidth="180.0" text="Jurusan" />
+                        <TableColumn fx:id="colMgmtCredits" prefWidth="80.0" text="SKS" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 5: RUANGAN (KHUSUS ADMIN) ================= -->
+        <Tab fx:id="ruanganTab" text="Ruangan">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+                <HBox spacing="10.0">
+                    <TextField fx:id="buildingField" promptText="Gedung" prefWidth="180.0" />
+                    <TextField fx:id="roomNameField" promptText="Nama Ruangan" prefWidth="150.0" />
+                    <TextField fx:id="capacityField" promptText="Kapasitas" prefWidth="100.0" />
+                </HBox>
+                <HBox spacing="10.0">
+                    <Button onAction="#onAddClassroomButtonClick" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Tambah" />
+                    <Button onAction="#onEditClassroomButtonClick" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Edit Data" />
+                    <Button onAction="#onDeleteClassroomButtonClick" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;" text="Hapus" />
+                    <Button onAction="#onClearClassroomButtonClick" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold;" text="Bersihkan Form" />
+                </HBox>
+                <TableView fx:id="classroomTable" prefHeight="450.0" prefWidth="880.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colClassroomBuilding" prefWidth="250.0" text="Gedung" />
+                        <TableColumn fx:id="colClassroomRoom" prefWidth="250.0" text="Ruangan" />
+                        <TableColumn fx:id="colClassroomCapacity" prefWidth="150.0" text="Kapasitas" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 6: JADWAL (KHUSUS ADMIN) ================= -->
+        <Tab fx:id="jadwalTab" text="Jadwal">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+                <HBox spacing="10.0">
+                    <ComboBox fx:id="scheduleCourseComboBox" promptText="Pilih Mata Kuliah" prefWidth="220.0" />
+                    <ComboBox fx:id="scheduleLecturerComboBox" promptText="Pilih Dosen (opsional)" prefWidth="180.0" />
+                    <ComboBox fx:id="scheduleRoomComboBox" promptText="Pilih Ruangan (opsional)" prefWidth="200.0" />
+                </HBox>
+                <HBox spacing="10.0">
+                    <ComboBox fx:id="scheduleDayComboBox" promptText="Hari" prefWidth="120.0" />
+                    <TextField fx:id="scheduleStartField" promptText="Jam Mulai (08:00)" prefWidth="140.0" />
+                    <TextField fx:id="scheduleEndField" promptText="Jam Selesai (10:00)" prefWidth="140.0" />
+                    <Button onAction="#onAddScheduleButtonClick" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Tambah" />
+                    <Button onAction="#onEditScheduleButtonClick" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;" text="Edit Data" />
+                    <Button onAction="#onDeleteScheduleButtonClick" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;" text="Hapus" />
+                    <Button onAction="#onClearScheduleButtonClick" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-font-weight: bold;" text="Bersihkan Form" />
+                </HBox>
+                <TableView fx:id="scheduleTable" prefHeight="420.0" prefWidth="880.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colScheduleDay" prefWidth="90.0" text="Hari" />
+                        <TableColumn fx:id="colScheduleTime" prefWidth="130.0" text="Jam" />
+                        <TableColumn fx:id="colScheduleCourse" prefWidth="260.0" text="Mata Kuliah" />
+                        <TableColumn fx:id="colScheduleLecturer" prefWidth="200.0" text="Dosen" />
+                        <TableColumn fx:id="colScheduleRoom" prefWidth="180.0" text="Ruangan" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 7: STATISTIK ================= -->
+        <Tab fx:id="statistikTab" text="Statistik">
+            <ScrollPane fitToWidth="true">
+                <VBox spacing="25.0" alignment="CENTER">
+                    <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                    </padding>
+                    <PieChart fx:id="facultyChart" prefWidth="550.0" prefHeight="380.0" title="Mahasiswa per Fakultas" />
+                    <HBox spacing="20.0" alignment="CENTER">
+                        <BarChart fx:id="avgIpkChart" prefWidth="420.0" prefHeight="320.0" title="Rata-rata IPK per Fakultas">
+                            <xAxis><CategoryAxis label="Fakultas" /></xAxis>
+                            <yAxis><NumberAxis label="IPK" lowerBound="0.0" upperBound="4.0" tickUnit="0.5" /></yAxis>
+                        </BarChart>
+                        <BarChart fx:id="semesterChart" prefWidth="420.0" prefHeight="320.0" title="Distribusi Mahasiswa per Semester">
+                            <xAxis><CategoryAxis label="Semester" /></xAxis>
+                            <yAxis><NumberAxis label="Jumlah Mahasiswa" /></yAxis>
+                        </BarChart>
+                    </HBox>
+                </VBox>
+            </ScrollPane>
+        </Tab>
+
+        <!-- ================= TAB 8: RIWAYAT PERUBAHAN ================= -->
+        <Tab fx:id="riwayatTab" text="Riwayat">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+                <Label text="Riwayat Perubahan Data (juga tersimpan di file riwayat_perubahan.log)" textFill="#2c3e50">
+                    <font><Font name="System Bold" size="14.0" /></font>
+                </Label>
+                <ListView fx:id="historyListView" VBox.vgrow="ALWAYS" />
+            </VBox>
+        </Tab>
+
+        <!-- ================= TAB 9: LAPORAN AGREGAT ================= -->
+        <Tab fx:id="laporanTab" text="Laporan">
+            <VBox spacing="15.0">
+                <padding>
+                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                </padding>
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <Label text="Pilih Jenis Laporan:" textFill="#2c3e50">
+                        <font><Font name="System Bold" size="14.0" /></font>
+                    </Label>
+                    <ComboBox fx:id="reportTypeComboBox" prefWidth="250.0" />
+                    <Button onAction="#onRefreshReportButtonClick" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;" text="Muat Laporan" />
+                </HBox>
+                <StackPane VBox.vgrow="ALWAYS">
+                    <TableView fx:id="courseReportTable" prefHeight="450.0" prefWidth="880.0">
+                        <columns>
+                            <TableColumn fx:id="colRepCourseId" prefWidth="120.0" text="Kode MK" />
+                            <TableColumn fx:id="colRepCourseName" prefWidth="350.0" text="Mata Kuliah" />
+                            <TableColumn fx:id="colRepCourseStudents" prefWidth="150.0" text="Total Mahasiswa" />
+                            <TableColumn fx:id="colRepCourseAvg" prefWidth="150.0" text="Rata-rata Nilai" />
+                        </columns>
+                    </TableView>
+                    <TableView fx:id="facultyReportTable" prefHeight="450.0" prefWidth="880.0" visible="false">
+                        <columns>
+                            <TableColumn fx:id="colRepFacultyName" prefWidth="350.0" text="Fakultas" />
+                            <TableColumn fx:id="colRepFacultyStudents" prefWidth="200.0" text="Total Mahasiswa" />
+                            <TableColumn fx:id="colRepFacultyAvg" prefWidth="200.0" text="Rata-rata Nilai" />
+                        </columns>
+                    </TableView>
+                </StackPane>
+            </VBox>
+        </Tab>
+
+    </TabPane>
+
+    <!-- Pesan Status -->
+    <Label fx:id="statusLabel" text="Status: Menunggu aksi..." textFill="#7f8c8d" />
+
+</VBox>

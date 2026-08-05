@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.university.universitygui.LoginController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+
+    <Label text="Security Login" textFill="#2c3e50">
+        <font>
+            <Font name="System Bold" size="28.0" />
+        </font>
+    </Label>
+
+    <Label text="University Management System" textFill="#7f8c8d">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Label>
+
+    <VBox spacing="10.0" style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+
+        <Label text="Username">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="usernameField" promptText="Masukkan username..." prefHeight="35.0" />
+
+        <Label text="Password">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </Label>
+        <!-- PENTING: Pakai PasswordField agar ketikannya jadi titik-titik (*) -->
+        <PasswordField fx:id="passwordField" promptText="Masukkan password..." prefHeight="35.0" />
+
+        <Button onAction="#onLoginButtonClick" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" text="LOGIN">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Button>
+
+        <Label fx:id="errorLabel" textFill="#e74c3c" alignment="CENTER" prefWidth="400.0">
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </Label>
+    </VBox>
+</VBox>
