@@ -4,7 +4,7 @@
 [![JavaFX](https://img.shields.io/badge/-JavaFX-FF9900?logo=java&logoColor=white)](#)
 [![SQL Server](https://img.shields.io/badge/-SQL_Server-CC2927?logo=microsoft-sql-server&logoColor=white)](#)
 [![Data Structures](https://img.shields.io/badge/-Advanced_Algorithms-00ADD8?logo=databricks&logoColor=white)](#)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 
 > **Sistem Informasi Akademik berskala Enterprise** | **60.000+ Data Mahasiswa** | **7 Struktur Data & Algoritma Lanjut** | **$O(1)$ Caching System**
 
